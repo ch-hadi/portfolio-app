@@ -2,7 +2,7 @@
 
 import { Stagger, StaggerItem } from "@/components/ui/reveal";
 import { Counter } from "@/components/ui/counter";
-import { stats } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 const techStrip = [
   "React",
@@ -23,6 +23,7 @@ const techStrip = [
 ];
 
 export function Trust() {
+  const { stats } = useSite();
   return (
     <section className="relative py-16">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">

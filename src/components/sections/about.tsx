@@ -4,14 +4,15 @@ import { CheckCircle2 } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { achievements, bio } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 export function About() {
+  const { achievements, bio, ui } = useSite();
   return (
     <Section id="about">
       <SectionHeader
-        kicker="About me"
-        title={<>The engineer behind the <span className="text-brand-gradient">products</span>.</>}
+        kicker={ui.about.kicker}
+        title={<>{ui.about.title[0]}<span className="text-brand-gradient">{ui.about.title[1]}</span>{ui.about.title[2]}</>}
         description={bio.short}
       />
 
@@ -35,8 +36,8 @@ export function About() {
 
         <Reveal direction="left">
           <div className="sticky top-28 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur card-shadow">
-            <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold">Why clients hire me</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Proven, measurable delivery, not promises.</p>
+            <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold">{ui.about.whyHire}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{ui.about.whyHireSub}</p>
             <Stagger className="mt-5 space-y-3.5">
               {achievements.map((a) => (
                 <StaggerItem key={a} className="flex items-start gap-3">

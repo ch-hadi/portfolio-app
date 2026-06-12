@@ -5,15 +5,16 @@ import { Briefcase } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Badge } from "@/components/ui/badge";
-import { experience } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 export function Experience() {
+  const { experience, ui } = useSite();
   return (
     <Section id="experience">
       <SectionHeader
-        kicker="Experience"
-        title={<>Five years of <span className="text-brand-gradient">shipping</span>.</>}
-        description="A track record across Healthcare, EdTech, Real Estate and AI, with measurable impact at every stop."
+        kicker={ui.experience.kicker}
+        title={<>{ui.experience.title[0]}<span className="text-brand-gradient">{ui.experience.title[1]}</span>{ui.experience.title[2]}</>}
+        description={ui.experience.description}
       />
 
       <div className="relative">
@@ -42,7 +43,7 @@ export function Experience() {
                     <div className={`flex flex-wrap items-center gap-2 ${i % 2 === 0 ? "md:justify-end" : ""}`}>
                       <Badge>{job.period}</Badge>
                       {job.current && (
-                        <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-500">Current</Badge>
+                        <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-500">{ui.experience.current}</Badge>
                       )}
                     </div>
                     <h3 className="mt-3 font-[family-name:var(--font-display)] text-lg font-semibold">{job.role}</h3>

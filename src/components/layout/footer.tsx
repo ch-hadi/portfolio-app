@@ -1,8 +1,12 @@
+"use client";
+
 import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Wordmark } from "@/components/ui/monogram";
-import { navLinks, profile } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 export function Footer() {
+  const { navLinks, profile, ui } = useSite();
+  const f = ui.footer;
   const year = new Date().getFullYear();
 
   return (
@@ -13,8 +17,7 @@ export function Footer() {
             <Wordmark monogramSize={38} />
           </a>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Full Stack Engineer & AI Application Developer building production-grade web and AI products from Salzburg,
-            Austria.
+            {f.tagline}
           </p>
           <p className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin className="size-4 text-brand-500" /> {profile.location}
@@ -22,7 +25,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold">Navigate</h3>
+          <h3 className="text-sm font-semibold">{f.navigate}</h3>
           <ul className="mt-4 space-y-2.5">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -35,14 +38,14 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold">Connect</h3>
+          <h3 className="text-sm font-semibold">{f.connect}</h3>
           <ul className="mt-4 space-y-2.5">
             <li>
               <a
                 href={`mailto:${profile.email}`}
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
-                <Mail className="size-4" /> Email
+                <Mail className="size-4" /> {f.email}
               </a>
             </li>
             <li>
@@ -70,7 +73,7 @@ export function Footer() {
                 href={profile.links.resume}
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
-                Resume / CV
+                {f.resume}
               </a>
             </li>
           </ul>
@@ -79,9 +82,9 @@ export function Footer() {
 
       <div className="mx-auto mt-12 flex w-full max-w-6xl flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
         <p>
-          © {year} {profile.name}. All rights reserved.
+          © {year} {profile.name}. {f.rights}
         </p>
-        <p>Built with Next.js, TypeScript, Tailwind &amp; Framer Motion.</p>
+        <p>{f.builtWith}</p>
       </div>
     </footer>
   );

@@ -426,3 +426,112 @@ export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ] as const;
+
+/** UI / chrome strings (everything that isn't structured content above). */
+export const ui = {
+  nav: { hireMe: "Hire Me", toggleMenu: "Toggle menu", home: "Home" },
+  hero: {
+    available: "Available for work",
+    headline: ["I build production-grade ", "web & AI products", " that ship."],
+    roles: ["Full Stack Engineer", "AI Application Developer"],
+    seeking:
+      "Pursuing an MSc in Salzburg, open to working-student & part-time engineering roles (20 hrs/week).",
+    hireMe: "Hire Me",
+    viewProjects: "View Projects",
+    resume: "Résumé",
+    chipYears: "Shipping production",
+    chipUsers: "Daily AI users",
+  },
+  about: {
+    kicker: "About me",
+    title: ["The engineer behind the ", "products", "."],
+    whyHire: "Why clients hire me",
+    whyHireSub: "Proven, measurable delivery, not promises.",
+  },
+  skills: {
+    kicker: "Capabilities",
+    title: ["A full-stack toolkit, ", "AI-ready", "."],
+    description:
+      "From pixel-perfect frontends to type-safe backends and production LLM systems. Here's the stack I ship with.",
+    levels: { 5: "Expert", 4: "Advanced", 3: "Intermediate", 2: "Learning" } as Record<number, string>,
+  },
+  experience: {
+    kicker: "Experience",
+    title: ["Five years of ", "shipping", "."],
+    description:
+      "A track record across Healthcare, EdTech, Real Estate and AI, with measurable impact at every stop.",
+    current: "Current",
+  },
+  projects: {
+    kicker: "Featured work",
+    title: ["Case studies, not just ", "screenshots", "."],
+    description:
+      "Each of these shipped to production. Here's the challenge, the solution, and the result, presented as a real product.",
+    challenge: "Challenge: ",
+    solution: "Solution: ",
+    results: "Results: ",
+    visit: "Visit Live Site",
+  },
+  current: {
+    buildingPre: "Currently building ",
+    buildProgress: "Build progress",
+    currentFocus: "Current focus",
+    architecture: "Architecture",
+  },
+  education: {
+    kicker: "Education & languages",
+    title: ["Grounded in ", "computer science & AI", "."],
+    description:
+      "A software engineering foundation, now sharpened with graduate research in applied AI and computer vision.",
+    enrolled: "Enrolled",
+    languages: "Languages",
+  },
+  visa: {
+    kicker: "Work authorization",
+    title: ["EU-authorized, ", "ready to start", "."],
+    description:
+      "Based in Salzburg with legal work authorization in Austria, so there's no relocation friction and no visa wait. Available on-site in the DACH region and fully remote worldwide.",
+  },
+  services: {
+    kicker: "Services",
+    title: ["How I can help you ", "build", "."],
+    description:
+      "From a single feature to a full product, with flexible engagements for freelance clients, startups, and teams.",
+  },
+  contact: {
+    kicker: "Let's talk",
+    title: ["Have a project in mind? ", "Let's build it."],
+    description:
+      "Available for freelance projects, startup collaborations, remote roles, and technical consulting. I usually reply within 24 hours.",
+    channelEmail: "Email",
+    channelLinkedin: "Connect with me",
+    channelGithub: "See my code",
+    channelWhatsapp: "Quick chat",
+    labelEmail: "Email",
+    labelLinkedin: "LinkedIn",
+    labelGithub: "GitHub",
+    labelWhatsapp: "WhatsApp",
+    bookCall: "Book a 30-min intro call",
+    formName: "Name",
+    formEmail: "Email",
+    formMessage: "Project details",
+    phName: "Jane Doe",
+    phEmail: "jane@company.com",
+    phMessage: "Tell me about your project, timeline, and goals…",
+    submit: "Send message",
+    success: "Opening your email client, thanks for reaching out!",
+    preferEmail: "Prefer email? Write to",
+    subject: "New project inquiry from",
+    fallbackName: "your site",
+  },
+  footer: {
+    tagline:
+      "Full Stack Engineer & AI Application Developer building production-grade web and AI products from Salzburg, Austria.",
+    navigate: "Navigate",
+    connect: "Connect",
+    email: "Email",
+    resume: "Resume / CV",
+    rights: "All rights reserved.",
+    builtWith: "Built with Next.js, TypeScript, Tailwind & Framer Motion.",
+  },
+} as const;

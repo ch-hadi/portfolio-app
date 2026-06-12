@@ -3,17 +3,18 @@
 import { BadgeCheck, Globe2, MapPin, Plane, ShieldCheck } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Stagger, StaggerItem } from "@/components/ui/reveal";
-import { workAuth } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 const icons = [ShieldCheck, MapPin, Globe2, Plane];
 
 export function Visa() {
+  const { workAuth, ui } = useSite();
   return (
     <Section id="visa" className="bg-muted/20">
       <SectionHeader
-        kicker="Work authorization"
-        title={<>EU-authorized, <span className="text-brand-gradient">ready to start</span>.</>}
-        description="Based in Salzburg with legal work authorization in Austria, so there's no relocation friction and no visa wait. Available on-site in the DACH region and fully remote worldwide."
+        kicker={ui.visa.kicker}
+        title={<>{ui.visa.title[0]}<span className="text-brand-gradient">{ui.visa.title[1]}</span>{ui.visa.title[2]}</>}
+        description={ui.visa.description}
       />
 
       <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

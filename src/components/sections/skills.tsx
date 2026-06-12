@@ -5,7 +5,7 @@ import { Brain, Cloud, Database, Layout, Server, Wrench, type LucideIcon } from 
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Stagger, StaggerItem } from "@/components/ui/reveal";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { skillGroups } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 const icons: Record<string, LucideIcon> = {
   Layout,
@@ -16,20 +16,15 @@ const icons: Record<string, LucideIcon> = {
   Wrench,
 };
 
-const levelLabel: Record<number, string> = {
-  5: "Expert",
-  4: "Advanced",
-  3: "Intermediate",
-  2: "Learning",
-};
-
 export function Skills() {
+  const { skillGroups, ui } = useSite();
+  const levelLabel = ui.skills.levels;
   return (
     <Section id="skills">
       <SectionHeader
-        kicker="Capabilities"
-        title={<>A full-stack toolkit, <span className="text-brand-gradient">AI-ready</span>.</>}
-        description="From pixel-perfect frontends to type-safe backends and production LLM systems. Here's the stack I ship with."
+        kicker={ui.skills.kicker}
+        title={<>{ui.skills.title[0]}<span className="text-brand-gradient">{ui.skills.title[1]}</span>{ui.skills.title[2]}</>}
+        description={ui.skills.description}
       />
 
       <Stagger className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

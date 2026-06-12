@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { Activity, Cpu } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { currentProject } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 export function CurrentProject() {
+  const { currentProject, ui } = useSite();
   return (
     <Section id="current">
       <Reveal>
@@ -20,7 +21,7 @@ export function CurrentProject() {
               </span>
 
               <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight sm:text-4xl">
-                Currently building <span className="text-brand-gradient">{currentProject.name}</span>
+                {ui.current.buildingPre}<span className="text-brand-gradient">{currentProject.name}</span>
               </h2>
               <p className="mt-2 text-sm font-medium text-muted-foreground">{currentProject.tag}</p>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">{currentProject.blurb}</p>
@@ -28,7 +29,7 @@ export function CurrentProject() {
               {/* Progress */}
               <div className="mt-7">
                 <div className="mb-2 flex items-center justify-between text-sm">
-                  <span className="font-medium">Build progress</span>
+                  <span className="font-medium">{ui.current.buildProgress}</span>
                   <span className="text-brand-500">{currentProject.progress}%</span>
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-muted">
@@ -45,7 +46,7 @@ export function CurrentProject() {
               </div>
 
               <div className="mt-7">
-                <p className="mb-3 text-sm font-semibold">Current focus</p>
+                <p className="mb-3 text-sm font-semibold">{ui.current.currentFocus}</p>
                 <ul className="grid gap-2 sm:grid-cols-2">
                   {currentProject.goals.map((g) => (
                     <li key={g} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -60,7 +61,7 @@ export function CurrentProject() {
             {/* Architecture stack */}
             <div className="rounded-2xl border border-border bg-background/50 p-6">
               <p className="mb-4 inline-flex items-center gap-2 text-sm font-semibold">
-                <Cpu className="size-4 text-brand-500" /> Architecture
+                <Cpu className="size-4 text-brand-500" /> {ui.current.architecture}
               </p>
               <div className="space-y-3">
                 {currentProject.architecture.map((layer, i) => (

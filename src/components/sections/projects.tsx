@@ -8,15 +8,16 @@ import { Reveal } from "@/components/ui/reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BrowserFrame } from "@/components/ui/browser-frame";
-import { projects } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 export function Projects() {
+  const { projects, ui } = useSite();
   return (
     <Section id="projects" className="bg-muted/20">
       <SectionHeader
-        kicker="Featured work"
-        title={<>Case studies, not just <span className="text-brand-gradient">screenshots</span>.</>}
-        description="Each of these shipped to production. Here's the challenge, the solution, and the result, presented as a real product."
+        kicker={ui.projects.kicker}
+        title={<>{ui.projects.title[0]}<span className="text-brand-gradient">{ui.projects.title[1]}</span>{ui.projects.title[2]}</>}
+        description={ui.projects.description}
       />
 
       <div className="space-y-20">
@@ -64,15 +65,15 @@ export function Projects() {
                 <div className="mt-5 space-y-3.5 text-sm leading-relaxed">
                   <div className="flex gap-3">
                     <Target className="mt-0.5 size-4 shrink-0 text-rose-400" />
-                    <p className="text-muted-foreground"><span className="font-semibold text-foreground">Challenge: </span>{project.challenge}</p>
+                    <p className="text-muted-foreground"><span className="font-semibold text-foreground">{ui.projects.challenge}</span>{project.challenge}</p>
                   </div>
                   <div className="flex gap-3">
                     <Lightbulb className="mt-0.5 size-4 shrink-0 text-amber-400" />
-                    <p className="text-muted-foreground"><span className="font-semibold text-foreground">Solution: </span>{project.solution}</p>
+                    <p className="text-muted-foreground"><span className="font-semibold text-foreground">{ui.projects.solution}</span>{project.solution}</p>
                   </div>
                   <div className="flex gap-3">
                     <TrendingUp className="mt-0.5 size-4 shrink-0 text-emerald-400" />
-                    <p className="text-muted-foreground"><span className="font-semibold text-foreground">Results: </span>{project.results.join(" · ")}</p>
+                    <p className="text-muted-foreground"><span className="font-semibold text-foreground">{ui.projects.results}</span>{project.results.join(" · ")}</p>
                   </div>
                 </div>
 
@@ -97,7 +98,7 @@ export function Projects() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button size="sm" variant="outline" asChild>
                     <a href={project.links.demo} target="_blank" rel="noreferrer">
-                      Visit Live Site <ArrowUpRight />
+                      {ui.projects.visit} <ArrowUpRight />
                     </a>
                   </Button>
                 </div>

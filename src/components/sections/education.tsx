@@ -4,15 +4,16 @@ import { GraduationCap, Languages as LanguagesIcon } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
 import { Badge } from "@/components/ui/badge";
-import { education, languages } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 export function Education() {
+  const { education, languages, ui } = useSite();
   return (
     <Section id="education">
       <SectionHeader
-        kicker="Education & languages"
-        title={<>Grounded in <span className="text-brand-gradient">computer science & AI</span>.</>}
-        description="A software engineering foundation, now sharpened with graduate research in applied AI and computer vision."
+        kicker={ui.education.kicker}
+        title={<>{ui.education.title[0]}<span className="text-brand-gradient">{ui.education.title[1]}</span>{ui.education.title[2]}</>}
+        description={ui.education.description}
       />
 
       <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
@@ -27,7 +28,7 @@ export function Education() {
                   <div className="flex flex-wrap items-center gap-2">
                     <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold">{edu.degree}</h3>
                     {edu.current && (
-                      <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-500">Enrolled</Badge>
+                      <Badge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-500">{ui.education.enrolled}</Badge>
                     )}
                   </div>
                   <p className="text-sm font-medium text-brand-500">{edu.school}</p>
@@ -50,7 +51,7 @@ export function Education() {
         <Reveal direction="left">
           <div className="h-full rounded-2xl border border-border bg-card/60 p-6 backdrop-blur card-shadow">
             <p className="mb-5 inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-lg font-semibold">
-              <LanguagesIcon className="size-5 text-brand-500" /> Languages
+              <LanguagesIcon className="size-5 text-brand-500" /> {ui.education.languages}
             </p>
             <div className="space-y-4">
               {languages.map((lang) => (

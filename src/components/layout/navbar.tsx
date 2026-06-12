@@ -5,11 +5,13 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { Wordmark } from "@/components/ui/monogram";
-import { navLinks } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
+  const { navLinks, ui } = useSite();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -35,7 +37,7 @@ export function Navbar() {
             scrolled && "glass border-border card-shadow"
           )}
         >
-          <a href="#home" aria-label="Home" className="group">
+          <a href="#home" aria-label={ui.nav.home} className="group">
             <Wordmark />
           </a>
 
@@ -53,13 +55,14 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <ThemeToggle />
             <Button size="sm" className="hidden sm:inline-flex" asChild>
-              <a href="#contact">Hire Me</a>
+              <a href="#contact">{ui.nav.hireMe}</a>
             </Button>
             <button
               type="button"
-              aria-label="Toggle menu"
+              aria-label={ui.nav.toggleMenu}
               onClick={() => setOpen((v) => !v)}
               className="flex size-10 items-center justify-center rounded-full border border-border bg-card/50 md:hidden"
             >
@@ -92,7 +95,7 @@ export function Navbar() {
               <li className="p-2">
                 <Button className="w-full" asChild>
                   <a href="#contact" onClick={() => setOpen(false)}>
-                    Hire Me
+                    {ui.nav.hireMe}
                   </a>
                 </Button>
               </li>

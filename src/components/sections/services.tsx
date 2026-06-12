@@ -12,7 +12,7 @@ import {
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Stagger, StaggerItem } from "@/components/ui/reveal";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { services } from "@/data/site";
+import { useSite } from "@/lib/i18n";
 
 const icons: Record<string, LucideIcon> = {
   Layers,
@@ -24,12 +24,13 @@ const icons: Record<string, LucideIcon> = {
 };
 
 export function Services() {
+  const { services, ui } = useSite();
   return (
     <Section id="services" className="bg-muted/20">
       <SectionHeader
-        kicker="Services"
-        title={<>How I can help you <span className="text-brand-gradient">build</span>.</>}
-        description="From a single feature to a full product, with flexible engagements for freelance clients, startups, and teams."
+        kicker={ui.services.kicker}
+        title={<>{ui.services.title[0]}<span className="text-brand-gradient">{ui.services.title[1]}</span>{ui.services.title[2]}</>}
+        description={ui.services.description}
       />
 
       <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
