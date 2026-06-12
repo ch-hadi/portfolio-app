@@ -60,6 +60,10 @@ export function Hero() {
             ))}
           </motion.div>
 
+          <motion.p variants={item} className="mt-3 text-sm text-muted-foreground">
+            Pursuing an MSc in Salzburg, open to working-student &amp; part-time engineering roles (20 hrs/week).
+          </motion.p>
+
           <motion.p variants={item} className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[1.05rem]">
             {brand.heroSub}
           </motion.p>

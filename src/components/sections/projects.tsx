@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Check, Github, Lightbulb, Target, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Check, Lightbulb, Target, TrendingUp } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Badge } from "@/components/ui/badge";
@@ -97,12 +97,7 @@ export function Projects() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button size="sm" variant="outline" asChild>
                     <a href={project.links.demo} target="_blank" rel="noreferrer">
-                      Live Demo <ArrowUpRight />
-                    </a>
-                  </Button>
-                  <Button size="sm" variant="ghost" asChild>
-                    <a href={project.links.github} target="_blank" rel="noreferrer">
-                      <Github /> Code
+                      Visit Live Site <ArrowUpRight />
                     </a>
                   </Button>
                 </div>

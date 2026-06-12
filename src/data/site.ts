@@ -418,33 +418,6 @@ export const services = [
   },
 ] as const;
 
-export const testimonials = [
-  {
-    quote:
-      "Hammad took our AI assistant from a rough idea to a product serving thousands of users daily. His RAG pipeline just works, answers are grounded and fast.",
-    name: "Product Lead",
-    role: "AI Startup (placeholder)",
-  },
-  {
-    quote:
-      "One of the most reliable engineers I've worked with. He cut our query latency by 20% and lifted test coverage above 90% without slowing delivery.",
-    name: "Engineering Manager",
-    role: "Xeven Solutions (placeholder)",
-  },
-  {
-    quote:
-      "He shipped our multi-tenant LMS with clean RBAC and a content pipeline that scaled effortlessly. Communication was sharp and proactive throughout.",
-    name: "Founder",
-    role: "EdTech Company (placeholder)",
-  },
-  {
-    quote:
-      "Pixel-perfect frontend work on our clinical UIs, render performance jumped 45% on low-spec hardware. He genuinely cares about the end user.",
-    name: "CTO",
-    role: "HealthTech (placeholder)",
-  },
-] as const;
-
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
