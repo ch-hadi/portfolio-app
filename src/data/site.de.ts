@@ -401,7 +401,6 @@ const ui = {
     email: "E-Mail",
     resume: "Lebenslauf / CV",
     rights: "Alle Rechte vorbehalten.",
-    builtWith: "Gebaut mit Next.js, TypeScript, Tailwind & Framer Motion.",
   },
 };
 

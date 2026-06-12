@@ -532,6 +532,5 @@ export const ui = {
     email: "Email",
     resume: "Resume / CV",
     rights: "All rights reserved.",
-    builtWith: "Built with Next.js, TypeScript, Tailwind & Framer Motion.",
   },
 } as const;

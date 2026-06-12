@@ -84,7 +84,6 @@ export function Footer() {
         <p>
           © {year} {profile.name}. {f.rights}
         </p>
-        <p>{f.builtWith}</p>
       </div>
     </footer>
   );
