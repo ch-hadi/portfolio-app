@@ -80,7 +80,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex w-full max-w-6xl flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
+      <div className="mx-auto mt-12 flex w-full max-w-6xl items-center justify-center gap-3 border-t border-border pt-6 text-center text-xs text-muted-foreground">
         <p>
           © {year} {profile.name}. {f.rights}
         </p>

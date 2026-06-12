@@ -438,7 +438,7 @@ export const ui = {
       "Pursuing an MSc in Salzburg, open to working-student & part-time engineering roles (20 hrs/week).",
     hireMe: "Hire Me",
     viewProjects: "View Projects",
-    resume: "Résumé",
+    resume: "Resume",
     chipYears: "Shipping production",
     chipUsers: "Daily AI users",
   },
