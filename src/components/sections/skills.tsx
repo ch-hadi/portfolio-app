@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Brain, Cloud, Database, Layout, Server, Wrench, type LucideIcon } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Stagger, StaggerItem } from "@/components/ui/reveal";
@@ -48,7 +48,7 @@ export function Skills() {
                         <span className="text-xs text-muted-foreground">{levelLabel[skill.level]}</span>
                       </div>
                       <div className="h-1.5 overflow-hidden rounded-full bg-muted">
-                        <motion.div
+                        <m.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${(skill.level / 5) * 100}%` }}
                           viewport={{ once: true }}

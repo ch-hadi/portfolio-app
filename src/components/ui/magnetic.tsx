@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 /**
@@ -27,8 +27,8 @@ export function Magnetic({ children, strength = 0.35 }: { children: ReactNode; s
   }
 
   return (
-    <motion.div ref={ref} onMouseMove={onMove} onMouseLeave={reset} style={{ x: sx, y: sy }} className="inline-block">
+    <m.div ref={ref} onMouseMove={onMove} onMouseLeave={reset} style={{ x: sx, y: sy }} className="inline-block">
       {children}
-    </motion.div>
+    </m.div>
   );
 }

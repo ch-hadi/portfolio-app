@@ -46,7 +46,9 @@ export function Monogram({ className, size = 36 }: { className?: string; size?: 
 export function Wordmark({ className, monogramSize = 34 }: { className?: string; monogramSize?: number }) {
   return (
     <span className={cn("flex items-center gap-2.5", className)}>
-      <Monogram size={monogramSize} />
+      <span aria-hidden="true" className="contents">
+        <Monogram size={monogramSize} />
+      </span>
       <span className="flex flex-col leading-none">
         <span className="font-[family-name:var(--font-display)] text-[0.95rem] font-semibold tracking-tight">
           Hammad Riaz

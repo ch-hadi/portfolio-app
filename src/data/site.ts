@@ -320,7 +320,7 @@ export const projects = [
 export const currentProject = {
   name: "Shahada GPT",
   tag: "AI Islamic Knowledge Assistant",
-  status: "Active Development",
+  status: "Shipped · Live",
   blurb:
     "A source-aware conversational AI assistant serving 1,000+ daily active users, built on OpenAI APIs with retrieval-augmented generation and a structured prompt-engineering pipeline.",
   goals: [
@@ -335,7 +335,7 @@ export const currentProject = {
     { layer: "AI", value: "OpenAI GPT-4o" },
     { layer: "Retrieval", value: "Vector DB + RAG" },
   ],
-  progress: 78,
+  progress: 100,
   tech: ["OpenAI", "React", "Node.js", "Vector DB", "LLM App Architecture", "RAG", "Prompt Engineering"],
 } as const;
 
@@ -546,8 +546,8 @@ export const ui = {
     visit: "Visit Live Site",
   },
   current: {
-    buildingPre: "Currently building ",
-    buildProgress: "Build progress",
+    buildingPre: "Recently shipped ",
+    buildProgress: "Completion",
     currentFocus: "Current focus",
     architecture: "Architecture",
   },

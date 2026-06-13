@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Cookie } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -38,7 +38,7 @@ export function CookieConsent() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
+        <m.div
           role="dialog"
           aria-label={c.title}
           aria-live="polite"
@@ -56,7 +56,7 @@ export function CookieConsent() {
               <p className="font-[family-name:var(--font-display)] text-sm font-semibold">{c.title}</p>
               <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
                 {c.message}{" "}
-                <Link href="/privacy" className="font-medium text-brand-500 underline-offset-2 hover:underline">
+                <Link href="/privacy" className="font-medium text-brand-700 underline-offset-2 hover:underline dark:text-brand-300">
                   {c.learnMore}
                 </Link>
               </p>
@@ -78,7 +78,7 @@ export function CookieConsent() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

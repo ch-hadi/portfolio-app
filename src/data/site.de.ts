@@ -220,7 +220,7 @@ const projects = [
 const currentProject = {
   ...cp,
   tag: "AI-Wissensassistent (Islam)",
-  status: "In aktiver Entwicklung",
+  status: "Veröffentlicht · Live",
   blurb:
     "Ein quellenbasierter dialogbasierter AI-Assistent für über 1.000 tägliche Nutzer, gebaut auf den OpenAI-APIs mit Retrieval-Augmented Generation und einer strukturierten Prompt-Engineering-Pipeline.",
   goals: [
@@ -385,8 +385,8 @@ const ui = {
     visit: "Live-Website ansehen",
   },
   current: {
-    buildingPre: "Aktuell in Arbeit: ",
-    buildProgress: "Fortschritt",
+    buildingPre: "Kürzlich veröffentlicht: ",
+    buildProgress: "Fertigstellung",
     currentFocus: "Aktueller Fokus",
     architecture: "Architektur",
   },

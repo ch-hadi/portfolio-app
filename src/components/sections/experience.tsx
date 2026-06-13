@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Briefcase } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -29,13 +29,13 @@ export function Experience() {
               >
                 {/* Node */}
                 <span className="absolute left-[1.05rem] top-4 z-10 flex size-9 -translate-x-1/2 items-center justify-center rounded-full border border-border bg-card md:left-1/2">
-                  <motion.span
+                  <m.span
                     className="flex size-9 items-center justify-center rounded-full"
                     whileInView={job.current ? { boxShadow: ["0 0 0 0 rgba(124,77,255,0.5)", "0 0 0 10px rgba(124,77,255,0)"] } : {}}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     <Briefcase className="size-4 text-brand-500" />
-                  </motion.span>
+                  </m.span>
                 </span>
 
                 <div className={`pl-12 md:pl-0 [direction:ltr] ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:col-start-2 md:pl-12"}`}>

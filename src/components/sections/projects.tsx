@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight, Check, Lightbulb, Target, TrendingUp } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -25,7 +25,7 @@ export function Projects() {
           <Reveal key={project.name} delay={0.05}>
             <article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
               {/* Browser-framed product mockup */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 30, rotateX: 6 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
@@ -48,7 +48,7 @@ export function Projects() {
                     className="object-cover object-top"
                   />
                 </BrowserFrame>
-              </motion.div>
+              </m.div>
 
               {/* Content */}
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>

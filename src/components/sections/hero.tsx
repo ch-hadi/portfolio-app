@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
@@ -27,9 +27,9 @@ export function Hero() {
       <AuroraBackground />
 
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <motion.div variants={container} initial="hidden" animate="show">
+        <m.div variants={container} initial="hidden" animate="show">
           {/* role + location line: instant context */}
-          <motion.div variants={item} className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+          <m.div variants={item} className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
             <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/50 px-3 py-1 backdrop-blur">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -40,35 +40,35 @@ export function Hero() {
             <span className="inline-flex items-center gap-1.5 text-muted-foreground">
               <MapPin className="size-3.5" /> {profile.location}
             </span>
-          </motion.div>
+          </m.div>
 
-          <motion.h1
+          <m.h1
             variants={item}
             className="mt-7 font-[family-name:var(--font-display)] text-[2.6rem] font-bold leading-[1.04] tracking-[-0.02em] sm:text-[3.4rem] lg:text-[3.75rem]"
           >
             {ui.hero.headline[0]}
             <br className="hidden sm:block" /> <span className="text-brand-gradient">{ui.hero.headline[1]}</span>
             {ui.hero.headline[2]}
-          </motion.h1>
+          </m.h1>
 
-          <motion.div variants={item} className="mt-5 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <m.div variants={item} className="mt-5 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             {roles.map((r, i) => (
               <span key={r} className="inline-flex items-center gap-2">
                 {i > 0 && <span className="size-1 rounded-full bg-brand-500/60" />}
                 <span className="font-medium text-foreground/80">{r}</span>
               </span>
             ))}
-          </motion.div>
+          </m.div>
 
-          <motion.p variants={item} className="mt-3 text-sm text-muted-foreground">
+          <m.p variants={item} className="mt-3 text-sm text-muted-foreground">
             {ui.hero.seeking}
-          </motion.p>
+          </m.p>
 
-          <motion.p variants={item} className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[1.05rem]">
+          <m.p variants={item} className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[1.05rem]">
             {brand.heroSub}
-          </motion.p>
+          </m.p>
 
-          <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
+          <m.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
             <Magnetic>
               <Button size="lg" className="group" asChild>
                 <a href="#contact">
@@ -84,9 +84,9 @@ export function Hero() {
                 <Download /> {ui.hero.resume}
               </a>
             </Button>
-          </motion.div>
+          </m.div>
 
-          <motion.div variants={item} className="mt-9 flex items-center gap-3">
+          <m.div variants={item} className="mt-9 flex items-center gap-3">
             {[
               { icon: Mail, href: `mailto:${profile.email}`, label: "Email" },
               { icon: Linkedin, href: profile.links.linkedin, label: "LinkedIn" },
@@ -103,30 +103,30 @@ export function Hero() {
                 <Icon className="size-[1.1rem]" />
               </a>
             ))}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         {/* Portrait: premium focal point */}
         <div className="relative mx-auto w-full max-w-[22rem] lg:max-w-[26rem]">
           <Portrait />
 
           {/* floating credential chips */}
-          <motion.div
+          <m.div
             animate={{ y: [0, -9, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -left-4 top-12 hidden rounded-2xl glass border border-border/70 px-4 py-2.5 sm:block"
           >
             <p className="font-[family-name:var(--font-display)] text-lg font-bold text-brand-gradient">5+ yrs</p>
             <p className="text-[0.7rem] text-muted-foreground">{ui.hero.chipYears}</p>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             animate={{ y: [0, 11, 0] }}
             transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
             className="absolute -right-3 bottom-16 hidden rounded-2xl glass border border-border/70 px-4 py-2.5 sm:block"
           >
             <p className="font-[family-name:var(--font-display)] text-lg font-bold text-brand-gradient">1,000+</p>
             <p className="text-[0.7rem] text-muted-foreground">{ui.hero.chipUsers}</p>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Activity, Cpu } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -33,7 +33,7 @@ export function CurrentProject() {
                   <span className="text-brand-500">{currentProject.progress}%</span>
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-muted">
-                  <motion.div
+                  <m.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${currentProject.progress}%` }}
                     viewport={{ once: true }}
@@ -41,7 +41,7 @@ export function CurrentProject() {
                     className="relative h-full rounded-full bg-gradient-to-r from-brand-500 to-cyan-accent"
                   >
                     <span className="absolute inset-0 animate-pulse bg-white/20" />
-                  </motion.div>
+                  </m.div>
                 </div>
               </div>
 
@@ -65,7 +65,7 @@ export function CurrentProject() {
               </p>
               <div className="space-y-3">
                 {currentProject.architecture.map((layer, i) => (
-                  <motion.div
+                  <m.div
                     key={layer.layer}
                     initial={{ opacity: 0, x: 16 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -75,7 +75,7 @@ export function CurrentProject() {
                   >
                     <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{layer.layer}</span>
                     <span className="font-[family-name:var(--font-mono)] text-sm">{layer.value}</span>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
 

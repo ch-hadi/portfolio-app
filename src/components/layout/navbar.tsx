@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import { AnimatePresence, m, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -26,7 +26,7 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <motion.div
+      <m.div
         className="h-0.5 origin-left bg-gradient-to-r from-brand-500 to-cyan-accent"
         style={{ scaleX: progress }}
       />
@@ -37,7 +37,7 @@ export function Navbar() {
             scrolled && "glass border-border card-shadow"
           )}
         >
-          <a href="#home" aria-label={ui.nav.home} className="group">
+          <a href="#home" className="group">
             <Wordmark />
           </a>
 
@@ -74,7 +74,7 @@ export function Navbar() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
@@ -100,7 +100,7 @@ export function Navbar() {
                 </Button>
               </li>
             </ul>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>

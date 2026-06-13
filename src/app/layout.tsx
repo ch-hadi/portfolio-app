@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { MotionProvider } from "@/components/motion-provider";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { LocaleProvider } from "@/lib/i18n";
 import { profile, brand } from "@/data/site";
@@ -116,6 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sora.variable} ${jetbrains.variable}`}>
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <MotionProvider>
           <LocaleProvider>
             <a
               href="#main"
@@ -126,6 +128,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <CookieConsent />
           </LocaleProvider>
+          </MotionProvider>
         </ThemeProvider>
         <script
           type="application/ld+json"

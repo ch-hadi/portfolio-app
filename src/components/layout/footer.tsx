@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="relative border-t border-border px-5 py-14 sm:px-8">
       <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Link href="/#home" aria-label="Home">
+          <Link href="/#home">
             <Wordmark monogramSize={38} />
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">

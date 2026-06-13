@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, CalendarClock, Github, Linkedin, Mail, MessageCircle, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Section } from "@/components/ui/section";
@@ -138,13 +138,13 @@ export function Contact() {
                   <Send className="size-4" /> {c.submit}
                 </Button>
 
-                <motion.p
+                <m.p
                   initial={false}
                   animate={{ opacity: sent ? 1 : 0, height: sent ? "auto" : 0 }}
                   className="overflow-hidden text-center text-sm text-emerald-500"
                 >
                   {c.success}
-                </motion.p>
+                </m.p>
                 <p className="text-center text-xs text-muted-foreground">
                   {c.preferEmail}{" "}
                   <a href={`mailto:${profile.email}`} className="text-brand-500 underline-offset-2 hover:underline">

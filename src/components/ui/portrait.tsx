@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -48,7 +48,7 @@ export function Portrait({
         }}
       />
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.96, y: 18 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.25 }}
@@ -93,7 +93,7 @@ export function Portrait({
             maskComposite: "exclude",
           }}
         />
-      </motion.div>
+      </m.div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Activity,
   AudioWaveform,
@@ -158,7 +158,7 @@ export function Research() {
                   >
                     {step.phase}
                     {!step.done && (
-                      <motion.span
+                      <m.span
                         className="absolute inset-0 rounded-full border border-emerald-500/60"
                         animate={{ scale: [1, 1.35, 1], opacity: [0.7, 0, 0.7] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -196,7 +196,7 @@ export function Research() {
           {research.models.map((m) => (
             <span
               key={m}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-brand-500/25 bg-brand-500/5 px-3 py-1.5 font-[family-name:var(--font-mono)] text-xs text-brand-500"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1.5 font-[family-name:var(--font-mono)] text-xs font-medium text-brand-700 dark:text-brand-300"
             >
               <span className="size-1.5 rounded-full bg-brand-500" />
               {m}
