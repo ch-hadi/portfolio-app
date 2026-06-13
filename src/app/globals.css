@@ -173,6 +173,34 @@ p {
   100% { transform: translate3d(0, 0, 0) rotate(0deg); }
 }
 
+.aurora-1 { animation: aurora 24s ease-in-out infinite; }
+.aurora-2 { animation: aurora 30s ease-in-out infinite reverse; }
+
+/* ──────────────────────────────────────────────────────────────
+   Mobile performance pass.
+   backdrop-filter and large blur radii are recomputed on every
+   scroll frame and are the main source of jank / slow paints on
+   phones. On small screens we drop them and keep solid-ish cards.
+   ────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  [class*="backdrop-blur"],
+  .glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .glass {
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+  }
+  /* tame oversized ambient glows so they don't repaint on scroll */
+  [class*="blur-3xl"] { filter: blur(32px) !important; }
+  [class*="blur-2xl"] { filter: blur(22px) !important; }
+  /* a moving + heavily blurred backdrop is the worst case on mobile */
+  .aurora-1,
+  .aurora-2 {
+    animation: none !important;
+  }
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

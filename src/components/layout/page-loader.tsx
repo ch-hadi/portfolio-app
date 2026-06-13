@@ -8,7 +8,7 @@ export function PageLoader() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setDone(true), 1100);
+    const t = setTimeout(() => setDone(true), 600);
     return () => clearTimeout(t);
   }, []);
 
@@ -32,7 +32,7 @@ export function PageLoader() {
                 className="h-full bg-gradient-to-r from-brand-500 to-cyan-accent"
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 1, ease: "easeInOut" }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
               />
             </div>
           </div>

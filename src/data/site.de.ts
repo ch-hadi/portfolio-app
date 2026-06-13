@@ -12,6 +12,7 @@ import {
   experience as ex,
   projects as pr,
   currentProject as cp,
+  research as re,
   education as ed,
   languages as lg,
   workAuth as wa,
@@ -78,7 +79,7 @@ const bio = {
 const stats = [
   { ...st[0], label: "Jahre in Produktion" },
   { ...st[1], label: "Ausgelieferte Apps" },
-  { ...st[2], label: "Tägliche aktive Nutzer" },
+  { ...st[2], label: "Täglich betreute Nutzer plattformübergreifend" },
   { ...st[3], label: "Testabdeckung der Kern-Services" },
 ];
 
@@ -288,11 +289,53 @@ const services = [
   { ...sv[5], title: "AI-Integration & Beratung", desc: "OpenAI-, RAG- und LLM-Systeme, die in Produktion gehen: fundiert, evaluiert, zuverlässig." },
 ];
 
+const research = {
+  ...re,
+  status: "Laufende MSc-Forschung",
+  enrolled: "Aktuell eingeschrieben",
+  location: "Salzburg, Österreich",
+  intro:
+    "Neben meiner Engineering-Arbeit absolviere ich ein MSc-Studium in Applied Image & Signal Processing in Österreich. Dort wende ich Computer Vision, Deep Learning und Signalverarbeitung auf echte biomedizinische Bildgebungsprobleme an, nicht nur auf Kursaufgaben.",
+  project: {
+    ...re.project,
+    title: "Kompressionsbewusste AI für biomedizinische Bildgebung",
+    questionLabel: "Forschungsfrage",
+    question:
+      "Wie stark lassen sich Mikroskopiebilder komprimieren, bevor die AI-gestützte Zellsegmentierung an Genauigkeit verliert?",
+    summary:
+      "Ich habe eine reproduzierbare Pipeline gebaut, die Zell-Mikroskopie-Datensätze mit H.265/HEVC in verschiedenen Qualitätsstufen komprimiert, sie rekonstruiert und auf jeder Variante eine CellPose-Deep-Learning-Segmentierung ausführt, um die Auswirkungen auf Bildqualität, Speichereffizienz und Segmentierungsleistung zu messen.",
+  },
+  interests: [
+    { ...re.interests[0], label: "Computer Vision" },
+    { ...re.interests[1], label: "Medizinische Bildgebung" },
+    { ...re.interests[2], label: "Bildkompression" },
+    { ...re.interests[3], label: "Signalverarbeitung" },
+    { ...re.interests[4], label: "Machine Learning" },
+    { ...re.interests[5], label: "Deep Learning" },
+    { ...re.interests[6], label: "Zellsegmentierung" },
+    { ...re.interests[7], label: "Biomedizinische Bildanalyse" },
+  ],
+  metrics: [
+    { ...re.metrics[0], label: "Mikroskopie-Bild-/Masken-Paare" },
+    { ...re.metrics[1], label: "Bewertete Kompressionsvarianten" },
+    { ...re.metrics[2], label: "Kleiner bei ~33 dB PSNR (Sweet Spot)" },
+    { ...re.metrics[3], label: "Maximal untersuchte Kompression" },
+  ],
+  timeline: [
+    { ...re.timeline[0], title: "Datensatz & Vorverarbeitung", desc: "Standardisierte CellPose-Mikroskopie-Paare unter Erhalt der exakten Zell-ID-Masken." },
+    { ...re.timeline[1], title: "H.265-Kompressions-Sweep", desc: "Bildsequenzen via FFmpeg über 4 Qualitätsstufen und 3 Frame-Reihenfolgen kodiert." },
+    { ...re.timeline[2], title: "AI-Zellsegmentierung", desc: "CellPose (cyto3) auf jeder komprimierten Variante und der Referenz ausgeführt." },
+    { ...re.timeline[3], title: "Qualitäts- & Speicheranalyse", desc: "Trade-off mit PSNR, Bitrate und Rate-Distortion-Kurven quantifiziert." },
+    { ...re.timeline[4], title: "Segmentierungs-Genauigkeit (IoU / Dice)", desc: "Misst die echte Auswirkung der Kompression auf die Zellerkennung, nicht nur die Pixeltreue." },
+  ],
+};
+
 const navLinks = [
   { label: "Über mich", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Erfahrung", href: "#experience" },
   { label: "Projekte", href: "#projects" },
+  { label: "Forschung", href: "#research" },
   { label: "Leistungen", href: "#services" },
   { label: "Kontakt", href: "#contact" },
 ];
@@ -346,6 +389,18 @@ const ui = {
     buildProgress: "Fortschritt",
     currentFocus: "Aktueller Fokus",
     architecture: "Architektur",
+  },
+  research: {
+    kicker: "Forschung & Wissenschaftlicher Fokus",
+    title: ["Angewandte Forschung in ", "Computer Vision & Medizinischer Bildgebung", "."],
+    description:
+      "Ich baue nicht nur Produkte, ich untersuche, wie AI mit echten Daten umgeht. Meine aktuelle MSc-Forschung wendet Computer Vision und Deep Learning auf die biomedizinische Bildgebung an.",
+    focusAreas: "Forschungsschwerpunkte",
+    approach: "Forschungsansatz",
+    models: "Modelle & Methoden",
+    tools: "Tools & Bibliotheken",
+    inProgress: "In Arbeit",
+    done: "Abgeschlossen",
   },
   education: {
     kicker: "Ausbildung & Sprachen",
@@ -401,6 +456,65 @@ const ui = {
     email: "E-Mail",
     resume: "Lebenslauf / CV",
     rights: "Alle Rechte vorbehalten.",
+    legal: "Rechtliches",
+    imprint: "Impressum",
+    privacy: "Datenschutz",
+  },
+  cookie: {
+    title: "Deine Privatsphäre",
+    message:
+      "Diese Website nutzt ausschließlich technisch notwendigen lokalen Speicher, um dein Design und deine Sprache zu merken. Es werden keine Tracking- oder Werbe-Cookies verwendet.",
+    accept: "Akzeptieren",
+    decline: "Nur notwendige",
+    learnMore: "Datenschutz",
+  },
+  legal: {
+    backHome: "Zurück zur Startseite",
+    lastUpdated: "Zuletzt aktualisiert",
+    imprint: {
+      title: "Impressum",
+      subtitle: "Angaben gemäß §5 ECG und §25 MedienG (Österreich)",
+      responsibleHeading: "Für den Inhalt verantwortlich",
+      contactHeading: "Kontakt",
+      disclaimerHeading: "Haftungsausschluss",
+      disclaimer:
+        "Trotz sorgfältiger inhaltlicher Kontrolle wird keine Haftung für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Informationen übernommen. Für die Inhalte verlinkter externer Websites sind ausschließlich deren Betreiber verantwortlich.",
+      copyrightHeading: "Urheberrecht",
+      copyright:
+        "Alle Inhalte, das Design und der Quellcode dieser Website sind urheberrechtlich geschützt. Eine Vervielfältigung oder Verwendung ohne vorherige schriftliche Zustimmung ist nicht gestattet.",
+    },
+    privacy: {
+      title: "Datenschutzerklärung",
+      subtitle: "Wie deine Daten auf dieser Website behandelt werden – im Einklang mit der DSGVO.",
+      intro:
+        "Deine Privatsphäre ist wichtig. Diese Website ist ein persönliches Portfolio und so gebaut, dass so wenige personenbezogene Daten wie möglich erhoben werden. Diese Erklärung beschreibt, was verarbeitet wird, und deine Rechte gemäß der EU-Datenschutz-Grundverordnung (DSGVO).",
+      sections: [
+        {
+          heading: "Verantwortlicher",
+          body: "Verantwortlicher für die Datenverarbeitung auf dieser Website ist Hammad Ahmad Riaz, Salzburg, Österreich. Du erreichst den Verantwortlichen unter der im Kontaktbereich genannten E-Mail-Adresse.",
+        },
+        {
+          heading: "Welche Daten verarbeitet werden",
+          body: "Diese Website verwendet keine Analyse-, Werbe- oder Tracking-Cookies von Drittanbietern. Die einzigen im Browser gespeicherten Daten sind dein Design (hell/dunkel), deine Sprachauswahl und deine Cookie-Einwilligung, die im lokalen Speicher deines eigenen Geräts abgelegt werden. Beim Surfen werden keine personenbezogenen Daten an einen Server übermittelt.",
+        },
+        {
+          heading: "Kontaktformular",
+          body: "Das Kontaktformular speichert keine Daten auf einem Server. Beim Absenden öffnet sich dein eigenes E-Mail-Programm mit vorausgefüllter Nachricht; die von dir gesendeten Angaben werden direkt über deinen E-Mail-Anbieter übermittelt. Deine Nachricht und E-Mail-Adresse werden ausschließlich zur Beantwortung deiner Anfrage verwendet.",
+        },
+        {
+          heading: "Hosting & Server-Logs",
+          body: "Die Website wird von einem Hosting-Anbieter bereitgestellt, der automatisch technische Zugriffsdaten (wie IP-Adresse, Browsertyp und Zeitpunkt der Anfrage) verarbeiten kann, um die Website auszuliefern und abzusichern. Grundlage ist das berechtigte Interesse am Betrieb einer sicheren Website (Art. 6 Abs. 1 lit. f DSGVO).",
+        },
+        {
+          heading: "Deine Rechte",
+          body: "Nach der DSGVO hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung und Übertragbarkeit deiner personenbezogenen Daten sowie das Recht, der Verarbeitung zu widersprechen. Außerdem kannst du dich bei der österreichischen Datenschutzbehörde beschweren.",
+        },
+        {
+          heading: "Kontakt",
+          body: "Für Datenschutzanfragen kontaktiere den Verantwortlichen per E-Mail unter der unten angegebenen Adresse.",
+        },
+      ],
+    },
   },
 };
 
@@ -413,6 +527,7 @@ export const de = {
   experience,
   projects,
   currentProject,
+  research,
   education,
   achievements,
   languages,

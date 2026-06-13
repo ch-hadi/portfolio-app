@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 import { Wordmark } from "@/components/ui/monogram";
 import { useSite } from "@/lib/i18n";
 
@@ -13,9 +14,9 @@ export function Footer() {
     <footer className="relative border-t border-border px-5 py-14 sm:px-8">
       <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <a href="#home" aria-label="Home">
+          <Link href="/#home" aria-label="Home">
             <Wordmark monogramSize={38} />
-          </a>
+          </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             {f.tagline}
           </p>
@@ -29,7 +30,10 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <a
+                  href={`/${link.href}`}
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
                   {link.label}
                 </a>
               </li>
@@ -80,10 +84,18 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex w-full max-w-6xl items-center justify-center gap-3 border-t border-border pt-6 text-center text-xs text-muted-foreground">
+      <div className="mx-auto mt-12 flex w-full max-w-6xl flex-col items-center justify-between gap-4 border-t border-border pt-6 text-center text-xs text-muted-foreground sm:flex-row">
         <p>
           © {year} {profile.name}. {f.rights}
         </p>
+        <nav aria-label={f.legal} className="flex items-center gap-5">
+          <Link href="/imprint" className="transition-colors hover:text-foreground">
+            {f.imprint}
+          </Link>
+          <Link href="/privacy" className="transition-colors hover:text-foreground">
+            {f.privacy}
+          </Link>
+        </nav>
       </div>
     </footer>
   );

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { CookieConsent } from "@/components/layout/cookie-consent";
 import { LocaleProvider } from "@/lib/i18n";
 import { profile, brand } from "@/data/site";
 import "./globals.css";
@@ -80,18 +81,33 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: profile.name,
-  jobTitle: "Full Stack Engineer & AI Application Developer",
-  email: `mailto:${profile.email}`,
-  telephone: profile.phone,
-  url: SITE_URL,
-  address: { "@type": "PostalAddress", addressLocality: "Salzburg", addressCountry: "AT" },
-  sameAs: [profile.links.linkedin, profile.links.github],
-  knowsAbout: ["React", "Next.js", "TypeScript", "Node.js", "Nest.js", "OpenAI", "RAG", "PostgreSQL", "AWS"],
-  alumniOf: [
-    { "@type": "CollegeOrUniversity", name: "FH Salzburg / University of Salzburg" },
-    { "@type": "CollegeOrUniversity", name: "University of Gujrat" },
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: profile.name,
+      jobTitle: "Full Stack Engineer & AI Application Developer",
+      email: `mailto:${profile.email}`,
+      telephone: profile.phone,
+      url: SITE_URL,
+      image: `${SITE_URL}/opengraph-image`,
+      address: { "@type": "PostalAddress", addressLocality: "Salzburg", addressCountry: "AT" },
+      sameAs: [profile.links.linkedin, profile.links.github],
+      knowsAbout: ["React", "Next.js", "TypeScript", "Node.js", "Nest.js", "OpenAI", "RAG", "PostgreSQL", "AWS"],
+      alumniOf: [
+        { "@type": "CollegeOrUniversity", name: "FH Salzburg / University of Salzburg" },
+        { "@type": "CollegeOrUniversity", name: "University of Gujrat" },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: `${profile.name} | ${profile.shortTitle}`,
+      description: brand.heroSub,
+      inLanguage: ["en", "de"],
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
   ],
 };
 
@@ -108,6 +124,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Skip to content
             </a>
             {children}
+            <CookieConsent />
           </LocaleProvider>
         </ThemeProvider>
         <script

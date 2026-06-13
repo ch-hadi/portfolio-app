@@ -20,6 +20,7 @@ const en = {
   experience: EN.experience,
   projects: EN.projects,
   currentProject: EN.currentProject,
+  research: EN.research,
   education: EN.education,
   achievements: EN.achievements,
   languages: EN.languages,

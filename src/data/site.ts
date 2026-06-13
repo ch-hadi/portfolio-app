@@ -71,7 +71,7 @@ export const bio = {
 export const stats = [
   { value: 5, suffix: "+", label: "Years shipping production" },
   { value: 10, suffix: "+", label: "Production apps delivered" },
-  { value: 1000, suffix: "+", label: "Daily active users served" },
+  { value: 50000, suffix: "+", label: "Daily users served across platforms" },
   { value: 90, suffix: "%", label: "Test coverage on core services" },
 ] as const;
 
@@ -339,6 +339,78 @@ export const currentProject = {
   tech: ["OpenAI", "React", "Node.js", "Vector DB", "LLM App Architecture", "RAG", "Prompt Engineering"],
 } as const;
 
+export const research = {
+  status: "Active MSc Research",
+  degree: "MSc Applied Image & Signal Processing",
+  institution: "FH Salzburg · University of Salzburg",
+  location: "Salzburg, Austria",
+  enrolled: "Currently Enrolled",
+  intro:
+    "Alongside my engineering work, I'm pursuing an MSc in Applied Image & Signal Processing in Austria, where I apply computer vision, deep learning and signal processing to real biomedical imaging problems, not just coursework.",
+  project: {
+    title: "Compression-Aware AI for Biomedical Imaging",
+    questionLabel: "Research question",
+    question:
+      "How far can microscopy images be compressed before AI-driven cell segmentation starts to lose accuracy?",
+    summary:
+      "I built a reproducible pipeline that compresses cell-microscopy datasets with H.265/HEVC across a range of quality levels, reconstructs them, and runs CellPose deep-learning segmentation on every variant, then measures the impact on image quality, storage efficiency and downstream segmentation performance.",
+  },
+  // 8 research focus areas — each maps to a lucide icon name
+  interests: [
+    { label: "Computer Vision", icon: "Eye" },
+    { label: "Medical Imaging", icon: "Scan" },
+    { label: "Image Compression", icon: "Minimize2" },
+    { label: "Signal Processing", icon: "AudioWaveform" },
+    { label: "Machine Learning", icon: "Brain" },
+    { label: "Deep Learning", icon: "Network" },
+    { label: "Cell Segmentation", icon: "Grid2x2" },
+    { label: "Biomedical Image Analysis", icon: "Microscope" },
+  ],
+  // headline numbers from the actual experiments
+  metrics: [
+    { value: "68", label: "Microscopy image / mask pairs" },
+    { value: "12", label: "Compression variants evaluated" },
+    { value: "12.7×", label: "Smaller at ~33 dB PSNR (sweet spot)" },
+    { value: "90×", label: "Maximum compression explored" },
+  ],
+  // visual research timeline
+  timeline: [
+    {
+      phase: "01",
+      title: "Dataset & Preprocessing",
+      desc: "Standardized CellPose microscopy image/mask pairs, preserving exact cell-ID labels.",
+      done: true,
+    },
+    {
+      phase: "02",
+      title: "H.265 Compression Sweep",
+      desc: "Encoded image sets via FFmpeg across 4 quality levels and 3 frame-ordering strategies.",
+      done: true,
+    },
+    {
+      phase: "03",
+      title: "AI Cell Segmentation",
+      desc: "Ran CellPose (cyto3) deep-learning segmentation on every compressed and baseline variant.",
+      done: true,
+    },
+    {
+      phase: "04",
+      title: "Quality & Storage Analysis",
+      desc: "Quantified the trade-off with PSNR, bitrate and rate-distortion curves.",
+      done: true,
+    },
+    {
+      phase: "05",
+      title: "Segmentation Accuracy (IoU / Dice)",
+      desc: "Measuring compression's real impact on cell-detection accuracy, not just pixel fidelity.",
+      done: false,
+    },
+  ],
+  // deep-learning architectures + classifiers explored
+  models: ["MobileNetV2", "VGG16", "ResNet", "KNN", "Softmax", "Transfer Learning"],
+  tech: ["Python", "FFmpeg", "CellPose", "PyTorch", "NumPy", "Pillow", "Matplotlib", "Google Colab"],
+} as const;
+
 export const education = [
   {
     degree: "MSc Applied Image & Signal Processing",
@@ -423,6 +495,7 @@ export const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Research", href: "#research" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -478,6 +551,18 @@ export const ui = {
     currentFocus: "Current focus",
     architecture: "Architecture",
   },
+  research: {
+    kicker: "Research & Academic Focus",
+    title: ["Applied research in ", "Computer Vision & Medical Imaging", "."],
+    description:
+      "I don't just build products, I investigate how AI behaves on real-world data. My current MSc research applies computer vision and deep learning to biomedical imaging.",
+    focusAreas: "Research focus areas",
+    approach: "Research approach",
+    models: "Models & methods",
+    tools: "Tools & libraries",
+    inProgress: "In progress",
+    done: "Completed",
+  },
   education: {
     kicker: "Education & languages",
     title: ["Grounded in ", "computer science & AI", "."],
@@ -532,5 +617,64 @@ export const ui = {
     email: "Email",
     resume: "Resume / CV",
     rights: "All rights reserved.",
+    legal: "Legal",
+    imprint: "Imprint",
+    privacy: "Privacy Policy",
+  },
+  cookie: {
+    title: "Your privacy",
+    message:
+      "This site uses only essential local storage to remember your theme and language preference. No tracking or advertising cookies are used.",
+    accept: "Accept",
+    decline: "Essential only",
+    learnMore: "Privacy Policy",
+  },
+  legal: {
+    backHome: "Back to home",
+    lastUpdated: "Last updated",
+    imprint: {
+      title: "Imprint",
+      subtitle: "Information pursuant to §5 ECG and §25 MedienG (Austria)",
+      responsibleHeading: "Responsible for content",
+      contactHeading: "Contact",
+      disclaimerHeading: "Disclaimer",
+      disclaimer:
+        "Despite careful content control, no liability is assumed for the accuracy, completeness or timeliness of the information provided. Links to external websites are the responsibility of their respective operators; no liability is accepted for their content.",
+      copyrightHeading: "Copyright",
+      copyright:
+        "All content, design and source code on this website are protected by copyright. Reproduction or use without prior written consent is not permitted.",
+    },
+    privacy: {
+      title: "Privacy Policy",
+      subtitle: "How your data is handled on this website, in line with the GDPR.",
+      intro:
+        "Your privacy matters. This website is a personal portfolio and is built to collect as little personal data as possible. This policy explains what is processed and your rights under the EU General Data Protection Regulation (GDPR).",
+      sections: [
+        {
+          heading: "Data controller",
+          body: "The controller responsible for data processing on this website is Hammad Ahmad Riaz, Salzburg, Austria. You can reach the controller at the email address listed in the contact section below.",
+        },
+        {
+          heading: "What data is processed",
+          body: "This site does not use analytics, advertising or third-party tracking cookies. The only data stored in your browser is your theme (light/dark), language preference and cookie-consent choice, kept in local storage on your own device. No personal data is transmitted to a server when you browse.",
+        },
+        {
+          heading: "Contact form",
+          body: "The contact form does not store data on a server. Submitting it opens your own email client with the message pre-filled, so any details you send are transmitted directly via your email provider. Your message and email address are used solely to respond to your enquiry.",
+        },
+        {
+          heading: "Hosting & server logs",
+          body: "The site is served by a hosting provider that may automatically process technical access data (such as IP address, browser type and time of request) for the purpose of delivering and securing the website. This is based on the legitimate interest of operating a secure website (Art. 6(1)(f) GDPR).",
+        },
+        {
+          heading: "Your rights",
+          body: "Under the GDPR you have the right to access, rectify, erase, restrict and port your personal data, and to object to its processing. You also have the right to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde).",
+        },
+        {
+          heading: "Contact",
+          body: "For any privacy request, contact the controller by email at the address listed below.",
+        },
+      ],
+    },
   },
 } as const;
