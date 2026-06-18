@@ -32,6 +32,10 @@ export function CookieConsent() {
     } catch {
       /* storage unavailable */
     }
+    // Update Google Consent Mode v2 based on the choice.
+    window.gtag?.("consent", "update", {
+      analytics_storage: value === "accepted" ? "granted" : "denied",
+    });
     setVisible(false);
   };
 

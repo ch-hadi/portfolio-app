@@ -3,6 +3,7 @@ import { Inter, Sora, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MotionProvider } from "@/components/motion-provider";
 import { CookieConsent } from "@/components/layout/cookie-consent";
+import { Analytics } from "@/components/analytics";
 import { LocaleProvider } from "@/lib/i18n";
 import { profile, brand } from "@/data/site";
 import "./globals.css";
@@ -134,6 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Analytics />
       </body>
     </html>
   );

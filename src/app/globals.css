@@ -21,6 +21,30 @@
 
   --color-cyan-accent: #22d3ee;
 
+  /* Semantic — warning (amber) */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* Semantic — loss / danger (rose-red) */
+  --color-loss-50: #fff1f2;
+  --color-loss-100: #ffe4e6;
+  --color-loss-200: #fecdd3;
+  --color-loss-300: #fda4af;
+  --color-loss-400: #fb7185;
+  --color-loss-500: #f43f5e;
+  --color-loss-600: #e11d48;
+  --color-loss-700: #be123c;
+  --color-loss-800: #9f1239;
+  --color-loss-900: #881337;
+
   --radius: 0.9rem;
 }
 

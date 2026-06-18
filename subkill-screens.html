@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SubKill — Screen mockups (light + dark)</title>
+<style>
+  :root{
+    --kill-50:#fff1f2;--kill-100:#ffe0e2;--kill-400:#ff5f69;--kill-500:#f5333f;--kill-600:#e11d2a;--kill-700:#bd1521;
+    --save-50:#ecfdf3;--save-100:#d1fadf;--save-400:#32d583;--save-500:#12b76a;--save-600:#039855;--save-700:#027a48;
+    --warn-50:#fffaeb;--warn-100:#fef0c7;--warn-500:#f79009;--warn-600:#dc6803;--warn-700:#b54708;
+    --leak-50:#fef3f2;--leak-100:#fee4e2;--leak-500:#d92d20;--leak-600:#b42318;--leak-700:#912018;
+    --info-50:#eff8ff;--info-500:#2e90fa;--info-700:#175cd3;
+  }
+  /* ---- LIGHT surfaces (default on .phone) ---- */
+  .phone{
+    --bg:#fbfbfc;--fg:#101014;--card:#ffffff;--muted:#f4f4f6;--muted-fg:#5b5b66;--border:#e8e8ee;
+    /* tinted bg-fills tuned for light */
+    --warn-fill:var(--warn-50);--warn-text:var(--warn-700);--warn-stroke:var(--warn-100);
+    --leak-fill:var(--leak-50);--leak-text:var(--leak-700);--leak-stroke:var(--leak-100);
+    --save-fill:var(--save-50);--save-text:var(--save-700);--save-stroke:var(--save-100);
+    --save-box-text:var(--save-700);
+  }
+  /* ---- DARK surfaces ---- */
+  .phone.dark{
+    --bg:#0a0a0c;--fg:#f4f4f6;--card:#15151a;--muted:#1d1d24;--muted-fg:#9a9aa6;--border:rgba(255,255,255,.08);
+    --warn-fill:rgba(247,144,9,.12);--warn-text:#fdb022;--warn-stroke:rgba(247,144,9,.28);
+    --leak-fill:rgba(217,45,32,.14);--leak-text:#fda29b;--leak-stroke:rgba(217,45,32,.30);
+    --save-fill:rgba(18,183,106,.12);--save-text:#6ce9a6;--save-stroke:rgba(18,183,106,.28);
+    --save-box-text:#6ce9a6;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:#e9ebef;color:#101014;min-height:100vh;padding:40px 24px 60px;
+  }
+  .modehead{max-width:760px;margin:0 auto 34px;text-align:center}
+  .modehead h2{font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#5b5b66}
+  .modehead.dk{margin-top:60px}
+  .gridrow{display:flex;gap:40px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+
+  .label{position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:600;color:#6b6b78;white-space:nowrap}
+  .phone{
+    position:relative;width:340px;height:720px;background:var(--bg);color:var(--fg);border-radius:42px;
+    box-shadow:0 2px 6px rgba(16,16,20,.05),0 40px 80px -32px rgba(16,16,20,.40);
+    border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;
+  }
+  .notch{height:30px;display:flex;align-items:center;justify-content:space-between;padding:14px 24px 0;font-size:12px;font-weight:600}
+  .scroll{flex:1;overflow:hidden;padding:8px 18px 0}
+  .row{display:flex;align-items:center;justify-content:space-between}
+  .h1{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .sub{font-size:13px;color:var(--muted-fg);margin-top:2px}
+  .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--kill-500),var(--kill-400));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 1px 2px rgba(16,16,20,.04)}
+  .hero{background:linear-gradient(135deg,var(--leak-600),var(--kill-500));color:#fff;border:none}
+  .hero .cap{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+  .hero .big{font-size:40px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px}
+  .pill-up{background:rgba(255,255,255,.16);color:#fff}
+  .stat{flex:1}
+  .stat .n{font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .stat .t{font-size:11px;color:var(--muted-fg);margin-top:2px}
+  .sec-title{font-size:13px;font-weight:700;margin:20px 2px 0}
+  .sub-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+  .sub-item:last-child{border-bottom:none}
+  .logo-sq{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff;flex-shrink:0}
+  .nm{font-size:14px;font-weight:600}
+  .mt{font-size:12px;color:var(--muted-fg);margin-top:1px}
+  .amt{font-size:14px;font-weight:700;text-align:right}
+  .badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px}
+  .b-warn{background:var(--warn-fill);color:var(--warn-text);border:1px solid var(--warn-stroke)}
+  .b-leak{background:var(--leak-fill);color:var(--leak-text);border:1px solid var(--leak-stroke)}
+  .b-save{background:var(--save-fill);color:var(--save-text);border:1px solid var(--save-stroke)}
+  .tabbar{display:flex;justify-content:space-around;padding:12px 8px 22px;border-top:1px solid var(--border);background:var(--card)}
+  .tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:600;color:var(--muted-fg)}
+  .tab.active{color:var(--kill-500)}
+  .tab .dot{width:22px;height:22px;border-radius:7px;background:var(--muted)}
+  .tab.active .dot{background:var(--kill-500)}
+  .btn{display:block;width:100%;text-align:center;padding:14px;border-radius:14px;font-size:14px;font-weight:700;border:none;cursor:pointer}
+  .btn-kill{background:var(--kill-600);color:#fff}
+  .btn-ghost{background:var(--muted);color:var(--fg)}
+  .steps{display:flex;align-items:center;gap:6px;margin-top:18px}
+  .step{flex:1;height:5px;border-radius:999px;background:var(--border)}
+  .step.on{background:var(--kill-500)}
+  .merchant{display:flex;align-items:center;gap:14px;margin-top:22px}
+  .merchant .logo-sq{width:54px;height:54px;border-radius:16px;font-size:20px}
+  .price-row{display:flex;align-items:baseline;gap:8px;margin-top:4px}
+  .price{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .save-box{background:var(--save-fill);border:1px solid var(--save-stroke);border-radius:16px;padding:16px;margin-top:18px;text-align:center}
+  .save-box .n{font-size:32px;font-weight:800;color:var(--save-box-text);letter-spacing:-.02em}
+  .save-box .t{font-size:12px;color:var(--save-box-text);margin-top:2px;font-weight:600}
+  .checklist{margin-top:18px}
+  .check{display:flex;align-items:flex-start;gap:12px;padding:11px 0}
+  .tick{width:22px;height:22px;border-radius:50%;background:var(--save-500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+  .check .ct{font-size:13px}
+  .note{background:var(--warn-fill);border:1px solid var(--warn-stroke);border-radius:14px;padding:13px;margin-top:16px;font-size:12px;color:var(--warn-text);display:flex;gap:10px}
+  .note .ic{font-size:15px}
+  .stack-btn{margin-top:18px;display:flex;flex-direction:column;gap:10px}
+  .leak-amt{color:var(--leak-text)}
+  .leak-amt-l{color:var(--leak-600)}
+</style>
+</head>
+<body>
+
+<!-- macro template repeated for light + dark via wrapper class -->
+<div class="modehead"><h2>☀ Light mode</h2></div>
+<div class="gridrow" id="light"></div>
+
+<div class="modehead dk"><h2>🌙 Dark mode</h2></div>
+<div class="gridrow" id="dark"></div>
+
+<script>
+  const screens = (dark) => `
+  <!-- SCREEN 1 -->
+  <div class="phone ${dark?'dark':''}">
+    <div class="label">1 · Money Leakage Dashboard</div>
+    <div class="notch"><span>9:41</span><span>SubKill</span></div>
+    <div class="scroll">
+      <div class="row" style="margin-top:6px">
+        <div><div class="h1">Good evening, Hammad</div><div class="sub">Here's where your money goes</div></div>
+        <div class="avatar">HR</div>
+      </div>
+      <div class="card hero">
+        <div class="cap">Leaking per month</div>
+        <div class="row" style="align-items:flex-end"><div class="big">€142.50</div><span class="pill pill-up">▲ €18 vs last month</span></div>
+        <div style="font-size:12px;opacity:.9;margin-top:10px">14 active subscriptions · 3 unused in 60 days</div>
+      </div>
+      <div class="card" style="display:flex;gap:14px">
+        <div class="stat"><div class="n" style="color:var(--save-${dark?'400':'600'})">€612</div><div class="t">Saved with SubKill</div></div>
+        <div class="stat" style="border-left:1px solid var(--border);padding-left:14px"><div class="n" style="color:var(--leak-${dark?'400':'600'})">€84</div><div class="t">Wasted last quarter</div></div>
+      </div>
+      <div class="sec-title">Needs attention</div>
+      <div class="card" style="padding:6px 18px">
+        <div class="sub-item"><div class="logo-sq" style="background:#e50914">N</div><div style="flex:1"><div class="nm">Netflix Premium</div><div class="mt">Renews in 2 days</div></div><div><div class="amt">€17.99</div><span class="badge b-warn" style="margin-top:4px">⏰ Renews soon</span></div></div>
+        <div class="sub-item"><div class="logo-sq" style="background:#1db954">S</div><div style="flex:1"><div class="nm">Spotify Family</div><div class="mt">Unused for 71 days</div></div><div><div class="amt">€14.99</div><span class="badge b-leak" style="margin-top:4px">⚠ Leaking</span></div></div>
+        <div class="sub-item"><div class="logo-sq" style="background:#ff9900">A</div><div style="flex:1"><div class="nm">Audible</div><div class="mt">Cancelled · saved €9.99/mo</div></div><div><div class="amt" style="color:var(--muted-fg);text-decoration:line-through">€9.99</div><span class="badge b-save" style="margin-top:4px">✓ Killed</span></div></div>
+      </div>
+    </div>
+    <div class="tabbar">
+      <div class="tab active"><div class="dot"></div>Home</div>
+      <div class="tab"><div class="dot"></div>Subs</div>
+      <div class="tab"><div class="dot"></div>Kill</div>
+      <div class="tab"><div class="dot"></div>Savings</div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2 -->
+  <div class="phone ${dark?'dark':''}">
+    <div class="label">2 · Cancellation Wizard</div>
+    <div class="notch"><span>9:41</span><span>SubKill</span></div>
+    <div class="scroll">
+      <div class="row" style="margin-top:6px"><div style="font-size:20px;font-weight:800">‹ Cancel subscription</div><div class="badge b-leak">Step 2 of 3</div></div>
+      <div class="steps"><div class="step on"></div><div class="step on"></div><div class="step"></div></div>
+      <div class="merchant"><div class="logo-sq" style="background:#1db954">S</div><div><div style="font-size:17px;font-weight:800">Spotify Family</div><div class="price-row"><span class="price leak-amt${dark?'':'-l'}">€14.99</span><span class="mt">/ month · billed since Mar 2023</span></div></div></div>
+      <div class="save-box"><div class="n">€179.88</div><div class="t">You'll save this over the next 12 months</div></div>
+      <div class="checklist">
+        <div class="check"><div class="tick">✓</div><div class="ct"><b>EU right to cancel</b> applied — no early-termination fee under your plan.</div></div>
+        <div class="check"><div class="tick">✓</div><div class="ct">SubKill drafts the cancellation request for you — one tap to send.</div></div>
+        <div class="check"><div class="tick">✓</div><div class="ct">Confirmation tracked &amp; stored as <b>GDPR proof</b> in your vault.</div></div>
+      </div>
+      <div class="note"><span class="ic">⏰</span><div>Cancel before <b>18 Jun</b> to avoid the next €14.99 charge. We'll remind you if anything stalls.</div></div>
+      <div class="stack-btn"><button class="btn btn-kill">Kill this subscription</button><button class="btn btn-ghost">Keep it for now</button></div>
+    </div>
+  </div>`;
+
+  document.getElementById('light').innerHTML = screens(false);
+  document.getElementById('dark').innerHTML  = screens(true);
+</script>
+</body>
+</html>

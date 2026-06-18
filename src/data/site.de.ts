@@ -28,7 +28,7 @@ const profile = {
 
 const brand = {
   ...b,
-  tagline: "Ich entwickle produktionsreife Web- & AI-Produkte, die wirklich live gehen.",
+  tagline: "Von der Idee zu Produkten für 50.000+ Nutzer täglich.",
   heroHeadline: "Software, die schnell, zuverlässig und intelligent ist.",
   heroSub:
     "Full-Stack-Engineer mit über 5 Jahren Erfahrung in produktiven Web-Apps für Healthcare, EdTech und Real Estate. Heute entwickle ich von Salzburg aus moderne AI-Produkte mit OpenAI, RAG und LLM-Architektur.",
@@ -344,7 +344,7 @@ const ui = {
   nav: { hireMe: "Kontakt aufnehmen", toggleMenu: "Menü umschalten", home: "Start" },
   hero: {
     available: "Verfügbar für Jobs",
-    headline: ["Ich entwickle produktionsreife ", "Web- & AI-Produkte", ", die live gehen."],
+    headline: ["Von der Idee zu ", "Produkten für 50.000+ Nutzer", " täglich."],
     roles: ["Full-Stack-Engineer", "AI-Application-Developer"],
     seeking:
       "MSc-Studium in Salzburg, offen für Werkstudenten- & Teilzeit-Engineering-Rollen (20 Std./Woche).",
@@ -463,7 +463,7 @@ const ui = {
   cookie: {
     title: "Deine Privatsphäre",
     message:
-      "Diese Website nutzt ausschließlich technisch notwendigen lokalen Speicher, um dein Design und deine Sprache zu merken. Es werden keine Tracking- oder Werbe-Cookies verwendet.",
+      "Diese Website nutzt technisch notwendigen lokalen Speicher, um dein Design und deine Sprache zu merken. Mit deiner Einwilligung nutzen wir zudem Google Analytics, um den Verkehr zu verstehen. Es werden keine Werbe-Cookies verwendet.",
     accept: "Akzeptieren",
     decline: "Nur notwendige",
     learnMore: "Datenschutz",
@@ -495,7 +495,11 @@ const ui = {
         },
         {
           heading: "Welche Daten verarbeitet werden",
-          body: "Diese Website verwendet keine Analyse-, Werbe- oder Tracking-Cookies von Drittanbietern. Die einzigen im Browser gespeicherten Daten sind dein Design (hell/dunkel), deine Sprachauswahl und deine Cookie-Einwilligung, die im lokalen Speicher deines eigenen Geräts abgelegt werden. Beim Surfen werden keine personenbezogenen Daten an einen Server übermittelt.",
+          body: "Standardmäßig sind die einzigen im Browser gespeicherten Daten dein Design (hell/dunkel), deine Sprachauswahl und deine Cookie-Einwilligung, die im lokalen Speicher deines eigenen Geräts abgelegt werden. Es werden keine Werbe- oder Tracking-Cookies von Drittanbietern verwendet. Mit deiner ausdrücklichen Einwilligung wird zusätzlich Google Analytics aktiviert (siehe unten).",
+        },
+        {
+          heading: "Analyse (Google Analytics)",
+          body: "Mit deiner Einwilligung nutzt diese Website Google Analytics 4 (bereitgestellt von Google Ireland Ltd.), um aggregierte, anonymisierte Zugriffe zu verstehen. Die Analyse-Speicherung bleibt deaktiviert, bis du im Cookie-Banner auf \u201EAkzeptieren\u201C klickst \u2014 durchgesetzt \u00FCber den Google Consent Mode \u2014 und mit \u201ENur notwendige\u201C bleibt sie ohne Funktionsverlust ausgeschaltet. Die Verarbeitung beruht auf deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die du jederzeit durch L\u00F6schen der gespeicherten Auswahl in deinem Browser widerrufen kannst. Daten k\u00F6nnen an Google-Server \u00FCbertragen werden, abgesichert durch die EU-Standardvertragsklauseln.",
         },
         {
           heading: "Kontaktformular",

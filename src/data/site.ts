@@ -21,7 +21,7 @@ export const profile = {
 } as const;
 
 export const brand = {
-  tagline: "I build production-grade web & AI products that ship.",
+  tagline: "From idea to products serving 50,000+ users daily.",
   heroHeadline: "Engineering software that's fast, reliable, and intelligent.",
   heroSub:
     "Full Stack Engineer with 5+ years shipping production web apps across Healthcare, EdTech and Real Estate, now building frontier AI products with OpenAI, RAG and LLM architecture from Salzburg, Austria.",
@@ -505,7 +505,7 @@ export const ui = {
   nav: { hireMe: "Hire Me", toggleMenu: "Toggle menu", home: "Home" },
   hero: {
     available: "Available for work",
-    headline: ["I build production-grade ", "web & AI products", " that ship."],
+    headline: ["From idea to ", "products serving 50,000+ users", " daily."],
     roles: ["Full Stack Engineer", "AI Application Developer"],
     seeking:
       "Pursuing an MSc in Salzburg, open to working-student & part-time engineering roles (20 hrs/week).",
@@ -624,7 +624,7 @@ export const ui = {
   cookie: {
     title: "Your privacy",
     message:
-      "This site uses only essential local storage to remember your theme and language preference. No tracking or advertising cookies are used.",
+      "This site uses essential local storage to remember your theme and language. With your consent, we also use Google Analytics to understand traffic. No advertising cookies are used.",
     accept: "Accept",
     decline: "Essential only",
     learnMore: "Privacy Policy",
@@ -656,7 +656,11 @@ export const ui = {
         },
         {
           heading: "What data is processed",
-          body: "This site does not use analytics, advertising or third-party tracking cookies. The only data stored in your browser is your theme (light/dark), language preference and cookie-consent choice, kept in local storage on your own device. No personal data is transmitted to a server when you browse.",
+          body: "By default, the only data stored in your browser is your theme (light/dark), language preference and cookie-consent choice, kept in local storage on your own device. No advertising or third-party tracking cookies are used. With your explicit consent, Google Analytics is additionally enabled (see below).",
+        },
+        {
+          heading: "Analytics (Google Analytics)",
+          body: "With your consent, this site uses Google Analytics 4 (provided by Google Ireland Ltd.) to understand aggregate, anonymised traffic. Analytics storage stays disabled until you click \u201CAccept\u201D in the cookie banner \u2014 enforced via Google Consent Mode \u2014 and choosing \u201CEssential only\u201D keeps it off with no loss of functionality. This processing is based on your consent (Art. 6(1)(a) GDPR), which you can withdraw at any time by clearing the site\u2019s stored choice in your browser. Data may be transferred to Google servers, safeguarded by the EU Standard Contractual Clauses.",
         },
         {
           heading: "Contact form",

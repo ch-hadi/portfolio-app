@@ -1,0 +1,182 @@
+========================================================================
+ SubKill — EU Subscription Guardian
+ Color system (hex + drop-in tokens)
+========================================================================
+ Concept: red = the brand / "kill a subscription" / money leaking out.
+ green = money saved. amber = renewal warning. neutral = surfaces.
+========================================================================
+
+------------------------------------------------------------------------
+ BRAND — Kill Red (primary)
+ Use for: logo, primary CTAs (Cancel, Kill subscription), alerts,
+ money-leakage figures.
+------------------------------------------------------------------------
+kill-50    #fff1f2
+kill-100   #ffe0e2
+kill-200   #ffc6ca
+kill-300   #ff9da3
+kill-400   #ff5f69
+kill-500   #f5333f   <- primary
+kill-600   #e11d2a
+kill-700   #bd1521
+kill-800   #9c1420
+kill-900   #81151f
+
+------------------------------------------------------------------------
+ SAVINGS — Green (success / money saved)
+ Use for: amounts saved, "Cancelled successfully", positive deltas.
+------------------------------------------------------------------------
+save-50    #ecfdf3
+save-100   #d1fadf
+save-200   #a6f4c5
+save-300   #6ce9a6
+save-400   #32d583
+save-500   #12b76a   <- base
+save-600   #039855
+save-700   #027a48
+save-800   #05603a
+save-900   #054f31
+
+------------------------------------------------------------------------
+ WARNING — Amber (upcoming renewal / "you'll be charged soon")
+------------------------------------------------------------------------
+warn-50    #fffaeb
+warn-100   #fef0c7
+warn-200   #fedf89
+warn-300   #fec84b
+warn-400   #fdb022
+warn-500   #f79009   <- base
+warn-600   #dc6803
+warn-700   #b54708
+warn-800   #93370d
+warn-900   #7a2e0e
+
+------------------------------------------------------------------------
+ LEAK / LOSS — deep red (money draining, overdue, danger zone)
+ A darker red than the brand so "loss" reads heavier than a CTA.
+------------------------------------------------------------------------
+leak-50    #fef3f2
+leak-100   #fee4e2
+leak-200   #fecdca
+leak-300   #fda29b
+leak-400   #f97066
+leak-500   #d92d20   <- base
+leak-600   #b42318
+leak-700   #912018
+leak-800   #7a271a
+leak-900   #55160c
+
+------------------------------------------------------------------------
+ INFO — Blue (neutral notices, tips, "did you know")
+------------------------------------------------------------------------
+info-50    #eff8ff
+info-100   #d1e9ff
+info-200   #b2ddff
+info-300   #84caff
+info-400   #53b1fd
+info-500   #2e90fa   <- base
+info-600   #1570ef
+info-700   #175cd3
+info-800   #1849a9
+info-900   #194185
+
+========================================================================
+ SURFACES (theme-aware) — clean, money-app neutral
+========================================================================
+
+                  LIGHT                     DARK
+background        #fbfbfc                   #0a0a0c
+foreground        #101014                   #f4f4f6
+card              #ffffff                   #15151a
+card-foreground   #101014                   #f4f4f6
+muted             #f4f4f6                   #1d1d24
+muted-foreground  #5b5b66                   #9a9aa6
+border            #e8e8ee                   rgba(255,255,255,0.08)
+ring              #f5333f                   #ff5f69
+
+========================================================================
+ GRADIENTS
+========================================================================
+brand gradient    linear-gradient(120deg, #f5333f 0%, #ff5f69 100%)
+leak gradient     linear-gradient(120deg, #d92d20 0%, #f5333f 100%)
+save gradient     linear-gradient(120deg, #12b76a 0%, #32d583 100%)
+
+========================================================================
+ DROP-IN: Tailwind v4 (CSS-first, paste inside @theme { })
+========================================================================
+
+@theme {
+  /* Kill red (brand) */
+  --color-kill-50:#fff1f2; --color-kill-100:#ffe0e2; --color-kill-200:#ffc6ca;
+  --color-kill-300:#ff9da3; --color-kill-400:#ff5f69; --color-kill-500:#f5333f;
+  --color-kill-600:#e11d2a; --color-kill-700:#bd1521; --color-kill-800:#9c1420; --color-kill-900:#81151f;
+
+  /* Savings green */
+  --color-save-50:#ecfdf3; --color-save-100:#d1fadf; --color-save-200:#a6f4c5;
+  --color-save-300:#6ce9a6; --color-save-400:#32d583; --color-save-500:#12b76a;
+  --color-save-600:#039855; --color-save-700:#027a48; --color-save-800:#05603a; --color-save-900:#054f31;
+
+  /* Warning amber */
+  --color-warn-50:#fffaeb; --color-warn-100:#fef0c7; --color-warn-200:#fedf89;
+  --color-warn-300:#fec84b; --color-warn-400:#fdb022; --color-warn-500:#f79009;
+  --color-warn-600:#dc6803; --color-warn-700:#b54708; --color-warn-800:#93370d; --color-warn-900:#7a2e0e;
+
+  /* Leak / loss (deep red) */
+  --color-leak-50:#fef3f2; --color-leak-100:#fee4e2; --color-leak-200:#fecdca;
+  --color-leak-300:#fda29b; --color-leak-400:#f97066; --color-leak-500:#d92d20;
+  --color-leak-600:#b42318; --color-leak-700:#912018; --color-leak-800:#7a271a; --color-leak-900:#55160c;
+
+  /* Info blue */
+  --color-info-50:#eff8ff; --color-info-100:#d1e9ff; --color-info-200:#b2ddff;
+  --color-info-300:#84caff; --color-info-400:#53b1fd; --color-info-500:#2e90fa;
+  --color-info-600:#1570ef; --color-info-700:#175cd3; --color-info-800:#1849a9; --color-info-900:#194185;
+}
+
+========================================================================
+ DROP-IN: tailwind.config.js (Tailwind v3)
+========================================================================
+
+module.exports = {
+  theme: { extend: { colors: {
+    kill: { 50:"#fff1f2",100:"#ffe0e2",200:"#ffc6ca",300:"#ff9da3",400:"#ff5f69",500:"#f5333f",600:"#e11d2a",700:"#bd1521",800:"#9c1420",900:"#81151f" },
+    save: { 50:"#ecfdf3",100:"#d1fadf",200:"#a6f4c5",300:"#6ce9a6",400:"#32d583",500:"#12b76a",600:"#039855",700:"#027a48",800:"#05603a",900:"#054f31" },
+    warn: { 50:"#fffaeb",100:"#fef0c7",200:"#fedf89",300:"#fec84b",400:"#fdb022",500:"#f79009",600:"#dc6803",700:"#b54708",800:"#93370d",900:"#7a2e0e" },
+    leak: { 50:"#fef3f2",100:"#fee4e2",200:"#fecdca",300:"#fda29b",400:"#f97066",500:"#d92d20",600:"#b42318",700:"#912018",800:"#7a271a",900:"#55160c" },
+    info: { 50:"#eff8ff",100:"#d1e9ff",200:"#b2ddff",300:"#84caff",400:"#53b1fd",500:"#2e90fa",600:"#1570ef",700:"#175cd3",800:"#1849a9",900:"#194185" },
+  } } },
+};
+
+========================================================================
+ DROP-IN: plain CSS variables
+========================================================================
+
+:root {
+  --kill-500:#f5333f; --kill-600:#e11d2a; --kill-700:#bd1521;
+  --save-500:#12b76a; --save-600:#039855;
+  --warn-500:#f79009;
+  --leak-500:#d92d20; --leak-600:#b42318;
+  --info-500:#2e90fa;
+
+  --background:#fbfbfc; --foreground:#101014; --card:#ffffff;
+  --muted:#f4f4f6; --muted-foreground:#5b5b66; --border:#e8e8ee; --ring:#f5333f;
+}
+.dark {
+  --background:#0a0a0c; --foreground:#f4f4f6; --card:#15151a;
+  --muted:#1d1d24; --muted-foreground:#9a9aa6;
+  --border:rgba(255,255,255,0.08); --ring:#ff5f69;
+}
+
+========================================================================
+ USAGE CHEAT-SHEET
+========================================================================
+ Primary CTA (Cancel / Kill):  bg-kill-600 hover:bg-kill-700 text-white
+ Money saved figure:           text-save-600  (dark: text-save-400)
+ Money leaking figure:         text-leak-600  (dark: text-leak-400)
+ Renewal-soon badge:           bg-warn-500/10 text-warn-700 border-warn-500/30
+ Danger / overdue badge:       bg-leak-500/10 text-leak-600 border-leak-500/30
+ Success badge:                bg-save-500/10 text-save-700 border-save-500/30
+ Info tip:                     bg-info-500/10 text-info-700 border-info-500/30
+
+ CONTRAST: on dark surfaces use the 300/400 steps for text; on light
+ surfaces use 600/700. Never put 500 text on a 500 fill.
+========================================================================
