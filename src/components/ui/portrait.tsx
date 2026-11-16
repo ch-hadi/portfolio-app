@@ -68,7 +68,7 @@ export function Portrait({
         <div
           aria-hidden
           className="absolute inset-0 mix-blend-soft-light"
-          style={{ background: "linear-gradient(150deg, #8f6dff55, transparent 45%, #22d3ee44)" }}
+          style={{ background: "linear-gradient(150deg, #f4232f66, transparent 45%, #e0071155)" }}
         />
 
         {/* theme-colored bottom fade melts photo into the page */}

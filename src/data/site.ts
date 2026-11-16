@@ -16,7 +16,7 @@ export const profile = {
     linkedin: "https://linkedin.com/in/hammad-ahmad-riaz",
     github: "https://github.com/hammad-ahmad-riaz",
     calendly: "https://calendly.com/hammadahmadriaz/30min",
-    resume: "/Hammad-Ahmad-Riaz-CV.pdf",
+    resume: "/Hammad-Ahmed-Riaz-CV.pdf",
   },
 } as const;
 
@@ -546,7 +546,7 @@ export const ui = {
     visit: "Visit Live Site",
   },
   current: {
-    buildingPre: "Recently shipped ",
+    buildingPre: "Shipped ",
     buildProgress: "Completion",
     currentFocus: "Current focus",
     architecture: "Architecture",

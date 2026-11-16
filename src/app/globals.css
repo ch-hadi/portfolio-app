@@ -8,18 +8,20 @@
   --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
 
-  --color-brand-50: #f2f0ff;
-  --color-brand-100: #e8e4ff;
-  --color-brand-200: #d3ccff;
-  --color-brand-300: #b3a3ff;
-  --color-brand-400: #8f6dff;
-  --color-brand-500: #7c4dff;
-  --color-brand-600: #6d34f5;
-  --color-brand-700: #5c25d8;
-  --color-brand-800: #4c20af;
-  --color-brand-900: #401e8c;
+  --color-brand-50: #fff1f1;
+  --color-brand-100: #ffe0e1;
+  --color-brand-200: #ffc6c8;
+  --color-brand-300: #ff9ca0;
+  --color-brand-400: #ff5f66;
+  --color-brand-500: #f4232f;
+  --color-brand-600: #de0f1b;
+  --color-brand-700: #b70d16;
+  --color-brand-800: #8f0c13;
+  --color-brand-900: #6d0a10;
 
-  --color-cyan-accent: #22d3ee;
+  /* Secondary accent. Historically "cyan"; now the bright warm red that
+     keeps brand gradients (from-brand-600 → cyan-accent) lively on dark. */
+  --color-cyan-accent: #ff5a52;
 
   /* Semantic — warning (amber) */
   --color-warning-50: #fffbeb;
@@ -56,7 +58,7 @@
   --muted: #f1f1f5;
   --muted-foreground: #5e5e70;
   --border: #e6e6ee;
-  --ring: #7c4dff;
+  --ring: #e00711;
   --grid: rgba(10, 10, 20, 0.04);
 }
 
@@ -68,7 +70,7 @@
   --muted: #14141d;
   --muted-foreground: #9a9aae;
   --border: rgba(255, 255, 255, 0.08);
-  --ring: #8f6dff;
+  --ring: #ff5f66;
   --grid: rgba(255, 255, 255, 0.035);
 }
 
@@ -136,14 +138,14 @@ p {
 /* Utility layer */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(120deg, var(--foreground) 0%, var(--foreground) 35%, #8f6dff 70%, #22d3ee 100%);
+    background: linear-gradient(120deg, var(--foreground) 0%, var(--foreground) 35%, #ff5a52 70%, #e00711 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .text-brand-gradient {
-    background: linear-gradient(120deg, #8f6dff 0%, #22d3ee 100%);
+    background: linear-gradient(120deg, #ff5a52 0%, #e00711 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
