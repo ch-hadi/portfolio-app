@@ -19,8 +19,8 @@ export function Monogram({ className, size = 36 }: { className?: string; size?: 
     >
       <defs>
         <linearGradient id="hr-grad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#8f6dff" />
-          <stop offset="1" stopColor="#22d3ee" />
+          <stop stopColor="#ff5a52" />
+          <stop offset="1" stopColor="#e00711" />
         </linearGradient>
       </defs>
       {/* squircle plate */}

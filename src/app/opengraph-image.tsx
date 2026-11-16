@@ -18,7 +18,7 @@ export default function OpengraphImage() {
           padding: "72px",
           background: "#07070b",
           backgroundImage:
-            "radial-gradient(circle at 0% 0%, rgba(124,77,255,0.35), transparent 45%), radial-gradient(circle at 100% 100%, rgba(34,211,238,0.28), transparent 45%)",
+            "radial-gradient(circle at 0% 0%, rgba(244,35,47,0.35), transparent 45%), radial-gradient(circle at 100% 100%, rgba(255,90,82,0.28), transparent 45%)",
           color: "#ededf2",
           fontFamily: "sans-serif",
         }}
@@ -35,7 +35,7 @@ export default function OpengraphImage() {
               fontSize: 30,
               fontWeight: 700,
               color: "#fff",
-              background: "linear-gradient(135deg,#6d34f5,#22d3ee)",
+              background: "linear-gradient(135deg,#de0f1b,#f4232f)",
             }}
           >
             HR
@@ -49,7 +49,7 @@ export default function OpengraphImage() {
             style={{
               fontSize: 38,
               fontWeight: 700,
-              background: "linear-gradient(120deg,#b3a3ff,#22d3ee)",
+              background: "linear-gradient(120deg,#ff9ca0,#ff5a52)",
               backgroundClip: "text",
               color: "transparent",
             }}
