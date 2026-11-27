@@ -150,8 +150,8 @@ export const experience = [
     role: "Full Stack Engineer",
     company: "Xeven Solutions",
     location: "Salzburg, Austria (Remote)",
-    period: "Mar 2024 - Present",
-    current: true,
+    period: "Mar 2024 - Aug 2026",
+    current: false,
     summary:
       "Building AI-powered client products and type-safe backend services while driving engineering quality.",
     highlights: [
@@ -507,8 +507,6 @@ export const ui = {
     available: "Available for work",
     headline: ["From idea to ", "products serving 50,000+ users", " daily."],
     roles: ["Full Stack Engineer", "AI Application Developer"],
-    seeking:
-      "Pursuing an MSc in Salzburg, open to working-student & part-time engineering roles (20 hrs/week).",
     hireMe: "Hire Me",
     viewProjects: "View Projects",
     resume: "Resume",
