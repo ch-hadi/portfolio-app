@@ -346,8 +346,6 @@ const ui = {
     available: "Verfügbar für Jobs",
     headline: ["Von der Idee zu ", "Produkten für 50.000+ Nutzer", " täglich."],
     roles: ["Full-Stack-Engineer", "AI-Application-Developer"],
-    seeking:
-      "MSc-Studium in Salzburg, offen für Werkstudenten- & Teilzeit-Engineering-Rollen (20 Std./Woche).",
     hireMe: "Kontakt aufnehmen",
     viewProjects: "Projekte ansehen",
     resume: "Lebenslauf",
