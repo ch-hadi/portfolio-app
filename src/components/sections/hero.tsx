@@ -60,10 +60,6 @@ export function Hero() {
             ))}
           </m.div>
 
-          <m.p variants={item} className="mt-3 text-sm text-muted-foreground">
-            {ui.hero.seeking}
-          </m.p>
-
           <m.p variants={item} className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-[1.05rem]">
             {brand.heroSub}
           </m.p>
