@@ -269,11 +269,11 @@ const languages = [
 const workAuth = {
   ...wa,
   status: "Arbeitsberechtigt in Österreich",
-  detail: "Arbeitsberechtigung für 20 Std./Woche",
+  detail: "Gültige österreichische Arbeitserlaubnis",
   location: "Wohnhaft in Salzburg, Österreich",
   remote: "Verfügbar für Remote-Arbeit in der gesamten EU & DACH-Region",
   points: [
-    { label: "Arbeitsberechtigung", value: "Österreich, 20 Std./Woche" },
+    { label: "Arbeitsberechtigung", value: "Österreich (gültige Erlaubnis)" },
     { label: "Standort", value: "Salzburg, Österreich 🇦🇹" },
     { label: "Markt", value: "Österreich & DACH-Region" },
     { label: "Remote", value: "EU-weit & weltweit" },

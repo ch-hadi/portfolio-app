@@ -446,11 +446,11 @@ export const languages = [
 
 export const workAuth = {
   status: "Authorized to work in Austria",
-  detail: "20 hrs/week work authorization",
+  detail: "Valid Austrian work permit",
   location: "Currently residing in Salzburg, Austria",
   remote: "Available for remote work across the EU & DACH region",
   points: [
-    { label: "Work Authorization", value: "Austria, 20 hrs/week" },
+    { label: "Work Authorization", value: "Austria (valid permit)" },
     { label: "Based in", value: "Salzburg, Austria 🇦🇹" },
     { label: "Market", value: "Austria & DACH region" },
     { label: "Remote", value: "EU-wide & worldwide" },
